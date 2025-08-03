@@ -19,7 +19,7 @@ const fplNews = [
   },
   {
     id: 102,
-    title: "Chelsea Signs New Striker",
+    title: "Arsenal Signs New Striker",
     date: "2025-08-02",
     summary:
       "Chelsea has signed a new striker to boost their attacking options ahead of the new season.",
