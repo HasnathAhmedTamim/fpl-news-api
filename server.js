@@ -15,17 +15,19 @@ const fplNews = [
       "Erling Haaland is confirmed fit and will start for Man City against Burnley.",
     team: "Manchester City",
     category: "Injury Update",
-    image: "https://via.placeholder.com/300x200/87CEEB/000000?text=Haaland+Fit"
+    image:
+      "https://i2-prod.football.london/incoming/article28079882.ece/ALTERNATES/s810/0_erling-haaland-man-city.jpg",
   },
   {
     id: 102,
     title: "Arsenal Signs New Striker",
     date: "2025-08-02",
     summary:
-      "Chelsea has signed a new striker to boost their attacking options ahead of the new season.",
-    team: "Chelsea",
+      "Arsenal has signed a new striker to boost their attacking options ahead of the new season.",
+    team: "Arsenal",
     category: "Transfer",
-    image: "https://via.placeholder.com/300x200/0000FF/FFFFFF?text=Chelsea+Transfer"
+    image:
+      "https://e0.365dm.com/25/07/1600x900/skysports-premier-league-arsenal_6960983.jpg?20250709134021",
   },
   {
     id: 103,
@@ -35,7 +37,8 @@ const fplNews = [
       "Arteta confirms Bukayo Saka may take penalties again this season.",
     team: "Arsenal",
     category: "Tactical",
-    image: "https://via.placeholder.com/300x200/FF0000/FFFFFF?text=Saka+Penalties"
+    image:
+      "https://dims.apnews.com/dims4/default/7e5277f/2147483647/strip/true/crop/1784x1189+0+0/resize/1440x960!/format/webp/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fe4%2Ff9%2Fdba7e8f5036296b2c952cfd39764%2Fa8a9fcf0d26246409103d993473fd3ef",
   },
   {
     id: 104,
@@ -45,7 +48,8 @@ const fplNews = [
       "Several key players are still out as United prepare for their season opener.",
     team: "Manchester United",
     category: "Injury Update",
-    image: "https://via.placeholder.com/300x200/FF0000/000000?text=Man+Utd+Injuries"
+    image:
+      "https://i2-prod.mirror.co.uk/incoming/article31035452.ece/ALTERNATES/s1200d/1_Manchester-United-v-Crystal-Palace-EFL-Carabao-Cup-Third-Round-Football-Old-Trafford-Manchester.jpg",
   },
 ];
 
