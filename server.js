@@ -61,6 +61,74 @@ app.get("/api/latest-news", (req, res) => {
   res.json(fplNews);
 });
 
+// Get news by team
+app.get("/api/news/team/:teamName", (req, res) => {
+  const teamName = req.params.teamName.toLowerCase();
+  const teamNews = fplNews.filter(news => 
+    news.team.toLowerCase().includes(teamName)
+  );
+  
+  if (teamNews.length === 0) {
+    return res.status(404).json({ message: `No news found for ${req.params.teamName}` });
+  }
+  
+  res.json(teamNews);
+});
+
+// Get news by category
+app.get("/api/news/category/:category", (req, res) => {
+  const category = req.params.category.toLowerCase();
+  const categoryNews = fplNews.filter(news => 
+    news.category.toLowerCase().includes(category)
+  );
+  
+  if (categoryNews.length === 0) {
+    return res.status(404).json({ message: `No news found for category ${req.params.category}` });
+  }
+  
+  res.json(categoryNews);
+});
+
+// Get single news item by ID
+app.get("/api/news/:id", (req, res) => {
+  const newsId = parseInt(req.params.id);
+  const newsItem = fplNews.find(news => news.id === newsId);
+  
+  if (!newsItem) {
+    return res.status(404).json({ message: `News with ID ${newsId} not found` });
+  }
+  
+  res.json(newsItem);
+});
+
+// Get latest news (limit results)
+app.get("/api/latest-news/:limit", (req, res) => {
+  const limit = parseInt(req.params.limit);
+  const limitedNews = fplNews.slice(0, limit);
+  res.json(limitedNews);
+});
+
+// Search news by keyword
+app.get("/api/search", (req, res) => {
+  const query = req.query.q;
+  
+  if (!query) {
+    return res.status(400).json({ message: "Search query 'q' is required" });
+  }
+  
+  const searchResults = fplNews.filter(news => 
+    news.title.toLowerCase().includes(query.toLowerCase()) ||
+    news.summary.toLowerCase().includes(query.toLowerCase()) ||
+    news.team.toLowerCase().includes(query.toLowerCase())
+  );
+  
+  res.json({
+    query: query,
+    results: searchResults.length,
+    news: searchResults
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
 });
